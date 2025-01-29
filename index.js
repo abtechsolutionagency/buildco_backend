@@ -10,6 +10,10 @@ app.use(express.json())
 app.use(cors())
 app.use(express.json({limit: '50mb'}));
 
+app.get('/', function (req, res) {
+    res.send('Backend is running and the server is working!');
+});
+
 app.post('/saveData', function (req, res) {
     const path = "./Json/" + req.body.id + ".json";
     console.log(req.body)
